@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://auramotors-srs.netlify.app/sitemap.xml

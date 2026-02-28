@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SRS Repair & Dashboard Repair in Wexford | Airbag & Seat Repair Ireland</title>
+  <meta name="description" content="Professional SRS repair, dashboard repair, seat repair and airbag module reset in Wexford, Ireland. Fast turnaround. Call or WhatsApp for vehicle safety system restoration." />
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#111824;
+      --text:#e9eef6;
+      --muted:#a7b2c2;
+      --line:#223047;
+      --accent:#7aa7ff;
+      --accent2:#6ee7b7;
+      --shadow: 0 20px 50px rgba(0,0,0,.45);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(122,167,255,.25), transparent 60%),
+                  radial-gradient(1000px 700px at 100% 0%, rgba(110,231,183,.14), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px;}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:10px 0 22px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px;
+    }
+    .dot{
+      width:12px;height:12px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow:0 0 0 6px rgba(122,167,255,.10);
+    }
+    .pill{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+    }
+    .btn{
+      border:1px solid var(--line);
+      background: rgba(17,24,36,.65);
+      padding:10px 14px; border-radius:999px;
+      display:inline-flex; align-items:center; gap:10px;
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,.25);
+      font-weight:600;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(122,167,255,.55); background: rgba(17,24,36,.85);}
+    .btn.primary{
+      border-color: rgba(122,167,255,.55);
+      background: linear-gradient(135deg, rgba(122,167,255,.18), rgba(110,231,183,.10));
+    }
+    .hero{
+      margin-top: 8px;
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .pill{justify-content:flex-start}
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(17,24,36,.82), rgba(17,24,36,.60));
+      border:1px solid rgba(34,48,71,.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero-left{padding:26px 22px}
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(28px, 3.2vw, 44px);
+      letter-spacing: -.6px;
+      line-height:1.1;
+    }
+    .sub{
+      color:var(--muted);
+      font-size: 16px;
+      max-width: 62ch;
+      margin: 0 0 18px;
+    }
+    .badges{display:flex; flex-wrap:wrap; gap:10px; margin-top: 14px;}
+    .badge{
+      padding:8px 10px; border-radius:999px;
+      border:1px solid rgba(34,48,71,.9);
+      background: rgba(11,15,20,.35);
+      color: var(--muted);
+      font-weight:600;
+      font-size: 13px;
+    }
+    .hero-right{
+      display:flex; flex-direction:column;
+    }
+    .hero-right .panel{
+      padding:18px 18px 16px;
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .panel h3{margin:0; font-size:16px;}
+    .panel p{margin:0; color:var(--muted); font-size:14px;}
+    .grid{
+      margin-top:18px;
+      display:grid; grid-template-columns: 1fr 1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+    .section{padding:18px;}
+    .section h2{
+      margin: 2px 0 10px;
+      font-size: 18px;
+      letter-spacing: -.2px;
+    }
+    .list{
+      margin:0; padding-left: 18px; color:var(--muted);
+    }
+    .list li{margin:7px 0}
+    .gallery{
+      display:grid; grid-template-columns: repeat(3, 1fr);
+      gap:10px; padding:18px;
+    }
+    @media (max-width: 900px){ .gallery{grid-template-columns:1fr 1fr} }
+    @media (max-width: 520px){ .gallery{grid-template-columns:1fr} }
+    .ph{
+      border-radius: 14px;
+      border:1px solid rgba(34,48,71,.9);
+      background:
+        radial-gradient(900px 300px at 30% 0%, rgba(122,167,255,.20), transparent 60%),
+        radial-gradient(800px 280px at 100% 10%, rgba(110,231,183,.12), transparent 60%),
+        rgba(11,15,20,.35);
+      aspect-ratio: 4/3;
+      overflow:hidden;
+      position:relative;
+    }
+    .ph img{
+      width:100%; height:100%;
+      object-fit:cover;
+      display:block;
+      filter: contrast(1.05) saturate(1.05);
+    }
+    .ph span{
+      position:absolute; left:10px; bottom:10px;
+      font-size: 12px; color: rgba(233,238,246,.85);
+      background: rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.10);
+      padding:6px 8px; border-radius: 999px;
+      backdrop-filter: blur(6px);
+    }
+    .footer{
+      margin-top: 16px;
+      padding: 18px;
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      color:var(--muted);
+      font-size: 13px;
+    }
+    .contact-row{display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px;}
+    .small{font-size: 12px; color: var(--muted);}
+    .hr{height:1px; background: rgba(34,48,71,.9); margin: 12px 0;}
+    /* LOCATION SECTION */
+
+.location-section {
+    padding: 80px 20px;
+    background: #111824;
+}
+
+.location-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.location-section h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.location-address {
+    color: #a7b2c2;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.directions-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #7aa7ff, #6ee7b7);
+    color: #000;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 40px;
+    transition: 0.3s ease;
+}
+
+.directions-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(122,167,255,0.3);
+}
+
+.map-wrapper {
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+}
+
+@media (max-width: 768px) {
+    .map-wrapper iframe {
+        height: 300px;
+    }
+}
+.reviews-section {
+    padding: 80px 20px;
+    background: #0f1724;
+}
+
+.reviews-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.reviews-section h2 {
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.review-card {
+    background: #111824;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+.stars {
+    color: #fbbf24;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.review-card p {
+    color: #a7b2c2;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.review-author {
+    font-weight: 600;
+    color: #e9eef6;
+}
+.review-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.google-review-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #7aa7ff, #4f7dff);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.google-review-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+  </style>
+  <!-- SEO Title -->
+<title>SRS Airbag Repair Ireland | AURA Motors</title>
+
+<!-- Description -->
+<meta name="description" content="Professional SRS reset, airbag module repair and crash data reset in Ireland. Fast turnaround in Wexford. AURA Motors.">
+
+<!-- Open Graph (Social Preview) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AURA Motors">
+<meta property="og:title" content="SRS Airbag Repair Ireland | AURA Motors">
+<meta property="og:description" content="Professional SRS reset, airbag module repair and crash data reset in Ireland.">
+<meta property="og:url" content="https://auramotors-srs.netlify.app/">
+<meta property="og:image" content="https://auramotors-srs.netlify.app/og-image.png">
+
+<!-- Twitter Preview -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SRS Airbag Repair Ireland | AURA Motors">
+<meta name="twitter:description" content="SRS reset & airbag repair services in Ireland.">
+<meta name="twitter:image" content="https://auramotors-srs.netlify.app/og-image.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness","AutoRepair"],
+  "name": "AURA Motors",
+  "description": "SRS airbag repair, airbag module repair and crash data reset in Ireland. Professional diagnostics and fast turnaround.",
+  "url": "https://auramotors-srs.netlify.app/",
+  "telephone": "+3530857363599",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Crandonnell",
+    "addressLocality": "Co. Wexford",
+    "postalCode": "Y35 F5DV",
+    "addressCountry": "IE"
+  },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "County Wexford" },
+    { "@type": "Country", "name": "Ireland" }
+  ],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "10:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "10:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "10:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "10:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "10:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "13:00" }
+  ],
+  "sameAs": [
+    "https://maps.app.goo.gl/L2hMzAhiSbmUiyH1A"
+  ]
+}
+</script>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Auto Safety Restoration Ireland</span>
+      </div>
+      <div class="pill">
+        <a class="btn primary" href="tel:+3530857363599">📞 Call</a>
+        <a class="btn" href="https://wa.me/3530857363599" target="_blank" rel="noopener">💬 WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="card hero-left">
+        <h1>SRS / Airbag System Repair & Crash Data Reset in Ireland</h1>
+        <p class="sub">
+          Professional diagnostics and restoration of vehicle safety electronics.
+          If your airbag/SRS light is on after an accident or repair — we can help.
+        </p>
+
+        <div class="contact-row">
+          <a class="btn primary" href="tel:+3530857363599">📞 Call: +353 0857363599</a>
+          <a class="btn" href="https://wa.me/3530857363599" target="_blank" rel="noopener">💬 WhatsApp Message</a>
+        </div>
+
+        <div class="badges">
+          <span class="badge">Fast turnaround</span>
+          <span class="badge">Crash data removal</span>
+          <span class="badge">SRS module reset</span>
+          <span class="badge">Ireland</span>
+        </div>
+
+        <div class="hr"></div>
+        <div class="small">
+          Note: Services depend on the vehicle model and module condition. Contact us with your car details for advice.
+        </div>
+      </div>
+
+      <div class="card hero-right">
+        <div class="panel">
+          <h3>Services</h3>
+          <p>Clear, simple, and focused — exactly what customers want.</p>
+        </div>
+        <div class="section">
+          <h2>What we do</h2>
+          <ul class="list">
+            <li>SRS/Airbag warning diagnostics</li>
+            <li>Crash data removal / module reset</li>
+            <li>Seat belt / pretensioner related faults (diagnosis)</li>
+            <li>Electrical fault finding (SRS-related)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card section">
+        <h2>How it works</h2>
+        <ul class="list">
+          <li>Send a message with your car make/model/year.</li>
+          <li>We confirm what can be done and estimated time.</li>
+          <li>Repair/reset, then you’re ready to go.</li>
+        </ul>
+      </div>
+
+      <div class="card section">
+        <h2>Who we work with</h2>
+        <ul class="list">
+          <li>Private car owners</li>
+          <li>Body shops & mechanics</li>
+          <li>Dealers and fleet clients</li>
+        </ul>
+      </div>
+
+      <div class="card section">
+        <h2>Contact</h2>
+        <div class="small">Phone / WhatsApp</div>
+        <div style="margin-top:10px; display:flex; flex-direction:column; gap:10px;">
+          <a class="btn primary" href="tel:+3530857363599">📞 +353 0857363599</a>
+          <a class="btn" href="https://wa.me/353X0857363599" target="_blank" rel="noopener">💬 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <div class="section">
+        <h2>Work Photos</h2>
+        <p class="sub" style="margin:0;">
+          Add your real photos here. For now you can keep placeholders or replace them with your images.
+        </p>
+      </div>
+
+      <div class="gallery">
+        <!-- Option A (placeholders): keep empty and it will show a nice block -->
+        <div class="ph">
+  <img src="images/photo9.jpg" alt="SRS repair">
+  <span>Before / After</span>
+</div>
+        <div class="ph">
+  <img src="images/photo2.jpg" alt="SRS repair">
+  <span>Dashboard Restoration</span>
+</div>
+        <div class="ph">
+  <img src="images/photo3.jpg" alt="SRS repair">
+  <span>Seat Restoration</span>
+</div>
+        <div class="ph">
+  <img src="images/photo4.jpg" alt="SRS repair">
+  <span>Seat Restoration</span>
+</div>
+        
+<div class="ph">
+  <img src="images/photo5.jpg" alt="SRS repair">
+  <span>Before / After</span>
+</div>
+        
+<div class="ph">
+  <img src="images/photo7.jpg" alt="SRS repair">
+  <span>Ceiling Restoration.</span>
+</div>
+
+        <!-- Option B (your images): put images into /images folder and uncomment lines like this:
+        <div class="ph"><img src="images/photo1.jpg" alt="SRS repair photo"><span>Before / After</span></div>
+        -->
+      </div>
+    </div>
+
+    <div class="card footer">
+      <div>© <span id="y"></span> Auto Safety Restoration Ireland Co.Wexford</div>
+      <div class="small">Call or WhatsApp: <strong>+353 0857363599</strong></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+  <section class="location-section">
+    <div class="location-container">
+        <h2>Find Us in Wexford</h2>
+        <p class="location-address">
+            AURA Motors<br>
+            Taghmon, Co. Wexford<br>
+            Y35F5DV, Ireland
+        </p>
+
+        <a class="directions-btn"
+           href="https://www.google.com/maps/dir/?api=1&destination=52.339481,-6.584749"
+           target="_blank">
+           📍 Get Directions
+        </a>
+
+        <div class="map-wrapper">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2437.705915907843!2d-6.584749!3d52.339481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48681df4a2353bc9%3A0x122dceecc8799948!2sAURA%20Motors!5e0!3m2!1sru!2sie!4v1771622266799!5m2!1sru!2sie"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</section>
+<section class="reviews-section">
+    <div class="reviews-container">
+        <h2>Customer Reviews</h2>
+
+        <div class="reviews-grid">
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>
+                    Professional SRS repair service. Airbag module reset was completed quickly and without issues. Highly recommended.
+                </p>
+                <span class="review-author">— Michael R.</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>
+                    Dashboard repair and electrical diagnostics done perfectly. Clear communication and fast turnaround.
+                </p>
+                <span class="review-author">— David K.</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>
+                    Reliable and professional team. Great experience with crash data reset service. Will return again.
+                </p>
+                <span class="review-author">— Patrick O.</span>
+            </div>
+
+        </div>
+        <div class="review-cta">
+    <a href="https://g.page/r/CUiZecjszi0SEBM/review" target="_blank" class="google-review-btn">
+        Leave a Review on Google
+    </a>
+</div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>AURA Motors | Auto Repair & Services in Wexford</title>
+  <meta name="description" content="AURA Motors in Wexford, Ireland. SRS/Airbag repair, diagnostics & electrics, valeting & polishing, service, NCT prep, starry sky installation and more." />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+
+  <!-- Open Graph (Google/WhatsApp preview) -->
+  <meta property="og:title" content="AURA Motors | Auto Services in Wexford" />
+  <meta property="og:description" content="SRS/Airbag repair, diagnostics & electrics, service, NCT prep, valeting, starry sky installation." />
+  <meta property="og:image" content="https://auramotors-srs.netlify.app/og-image.png" />
+  <meta property="og:url" content="https://auramotors-srs.netlify.app/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AURA Motors | Auto Services in Wexford" />
+  <meta name="twitter:description" content="SRS/Airbag repair, diagnostics & electrics, service, NCT prep, valeting, starry sky installation." />
+  <meta name="twitter:image" content="https://auramotors-srs.netlify.app/og-image.png" />
+
+  <style>
+    :root{
+      --bg:#07110d;
+      --bg2:#0b1a14;
+      --card:rgba(12, 26, 20, .72);
+      --card2:rgba(10, 22, 17, .55);
+      --line:rgba(214, 182, 110, .18);
+      --text:#eaf3ee;
+      --muted:rgba(234,243,238,.72);
+      --gold:#d6b66e;
+      --gold2:#b89345;
+      --shadow: 0 24px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --max: 1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% -10%, rgba(214,182,110,.18), transparent 60%),
+        radial-gradient(1000px 650px at 110% 0%, rgba(40,140,90,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      overflow-x:hidden;
+    }
+
+    /* Background logo (blended, no borders) */
+    .bg-logo{
+      position:fixed;
+      inset:-120px;
+      background:url("/bg-logo.png") center/contain no-repeat;
+      opacity:.10;
+      filter: saturate(.8) brightness(.95) contrast(1.05);
+      pointer-events:none;
+      transform: translateZ(0);
+      mix-blend-mode: soft-light;
+    }
+    .bg-fade{
+      position:fixed;
+      inset:0;
+      background: radial-gradient(900px 600px at 25% 25%, rgba(7,17,13,.25), rgba(7,17,13,.75));
+      pointer-events:none;
+    }
+
+    .container{
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      position:relative;
+      z-index:2;
+    }
+
+    /* Topbar */
+    header{
+      padding: 18px 0 10px;
+    }
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 240px;
+    }
+    .brand img{
+      width:44px;height:44px;border-radius:12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+    }
+    .brand .name{
+      line-height:1.05;
+    }
+    .brand .name b{
+      display:block;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size: 14px;
+      color: rgba(234,243,238,.92);
+    }
+    .brand .name span{
+      display:block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding: 11px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(214,182,110,.22);
+      color: var(--text);
+      text-decoration:none;
+      background: rgba(10, 22, 17, .40);
+      backdrop-filter: blur(10px);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      white-space:nowrap;
+      font-weight: 600;
+      font-size: 13px;
+    }
+    .btn:hover{
+      transform: translateY(-2px);
+      border-color: rgba(214,182,110,.42);
+      box-shadow: 0 16px 40px rgba(0,0,0,.35);
+    }
+    .btn.primary{
+      border: 1px solid rgba(214,182,110,.55);
+      background: linear-gradient(135deg, rgba(214,182,110,.22), rgba(184,147,69,.12));
+    }
+
+    /* HERO layout: left text, right map */
+    .hero{
+      padding: 8px 0 18px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1fr 1.35fr; /* right (map) wider */
+      gap: 18px;
+      align-items: start;
+    }
+
+    .hero-left{
+      padding: 10px 0 0;
+    }
+
+    h1{
+      margin: 0 0 10px;
+      font-size: 56px;
+      line-height: 1.03;
+      letter-spacing: -0.02em;
+      max-width: 560px;
+      text-shadow: 0 18px 40px rgba(0,0,0,.45);
+    }
+    .sub{
+      margin: 0 0 14px;
+      color: var(--muted);
+      max-width: 540px;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .pills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 8px;
+    }
+    .pill{
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      border: 1px solid rgba(214,182,110,.18);
+      background: rgba(10, 22, 17, .35);
+      color: rgba(234,243,238,.92);
+      text-decoration:none;
+      transition: transform .18s ease, border-color .18s ease;
+    }
+    .pill:hover{
+      transform: translateY(-2px);
+      border-color: rgba(214,182,110,.40);
+    }
+
+    /* Map card */
+    .map-card{
+      background: linear-gradient(180deg, rgba(12,26,20,.72), rgba(12,26,20,.52));
+      border: 1px solid rgba(214,182,110,.16);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .map-frame{
+      width:100%;
+      height: 360px; /* высота нравится — оставляем */
+      display:block;
+      border:0;
+    }
+    .map-footer{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding: 12px 12px 14px;
+      border-top: 1px solid rgba(214,182,110,.12);
+      background: rgba(8, 18, 14, .35);
+      backdrop-filter: blur(8px);
+    }
+    .map-footer .mini{
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    /* Services section */
+    .section-title{
+      margin: 18px 0 10px;
+      font-size: 14px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(214,182,110,.92);
+    }
+
+    .cards{
+    display:grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 14px;
+}
+
+    .card{
+      position:relative;
+      border-radius: 20px;
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(12,26,20,.74), rgba(12,26,20,.46));
+      border: 1px solid rgba(214,182,110,.14);
+      box-shadow: 0 20px 55px rgba(0,0,0,.40);
+      overflow:hidden;
+      min-height: 230px;
+      min-width: 0;
+    }
+
+    /* subtle gold highlight */
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(600px 240px at 20% 0%, rgba(214,182,110,.16), transparent 55%);
+      opacity: .9;
+      pointer-events:none;
+    }
+
+    .card h3{
+      position:relative;
+      margin: 0 0 8px;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+    }
+    .card p{
+      position:relative;
+      margin: 0 0 12px;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 13px;
+      max-width: 560px;
+    }
+
+    .card .tag{
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(214,182,110,.18);
+      background: rgba(8,18,14,.28);
+      font-size: 12px;
+      color: rgba(234,243,238,.92);
+      margin-bottom: 12px;
+    }
+
+    .card .cta{
+      position:absolute;
+      right: 14px;
+      bottom: 14px;
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    .linkbtn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 10px 12px;
+      border-radius: 12px;
+      text-decoration:none;
+      font-weight:700;
+      font-size: 13px;
+      color: var(--text);
+      border: 1px solid rgba(214,182,110,.26);
+      background: rgba(8,18,14,.35);
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+    .linkbtn:hover{
+      transform: translateY(-2px);
+      border-color: rgba(214,182,110,.45);
+      box-shadow: 0 16px 40px rgba(0,0,0,.35);
+    }
+    .linkbtn.gold{
+      border-color: rgba(214,182,110,.55);
+      background: linear-gradient(135deg, rgba(214,182,110,.22), rgba(184,147,69,.12));
+    }
+
+    /* Card spans (uneven layout) */
+    .span-8{ grid-column: span 8; min-height: 300px; }
+    .span-4{ grid-column: span 4; }
+    .span-6{ grid-column: span 6; }
+    .span-7{ grid-column: span 7; }
+    .span-5{ grid-column: span 5; }
+    .span-12{
+    grid-column: 1 / -1;
+}
+    .tall{ min-height: 320px; }
+    .taller{ min-height: 360px; }
+
+    /* Reviews */
+    .reviews-wrap{
+      margin: 22px 0 26px;
+      padding: 18px;
+      border-radius: 22px;
+      border: 1px solid rgba(214,182,110,.14);
+      background: linear-gradient(180deg, rgba(12,26,20,.55), rgba(10,22,17,.35));
+      box-shadow: var(--shadow);
+    }
+    .reviews-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom: 12px;
+    }
+    .reviews-head h2{
+      margin:0;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+    }
+    .reviews-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .review{
+      border-radius: 18px;
+      padding: 14px;
+      background: rgba(8,18,14,.30);
+      border: 1px solid rgba(214,182,110,.12);
+      min-height: 140px;
+    }
+    .stars{ color: var(--gold); letter-spacing: 2px; margin-bottom: 8px; }
+    .review p{ margin:0 0 10px; color: var(--muted); font-size: 13px; line-height:1.5; }
+    .author{ color: rgba(234,243,238,.9); font-weight:700; font-size: 13px; }
+
+    footer{
+      padding: 10px 0 26px;
+      color: rgba(234,243,238,.55);
+      font-size: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      h1{ font-size: 44px; }
+      .map-frame{ height: 320px; }
+      .span-8,.span-7,.span-6,.span-5,.span-4{ grid-column: span 12; }
+      .reviews-grid{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px){
+      h1{ font-size: 36px; }
+      .map-frame{ height: 280px; }
+      .actions{ justify-content:flex-start; }
+    }
+  </style>
+
+  <!-- Structured data (Local Business) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":["LocalBusiness","AutoRepair"],
+    "name":"AURA Motors",
+    "url":"https://auramotors-srs.netlify.app/",
+    "telephone":"+353857363599",
+    "image":"https://auramotors-srs.netlify.app/og-image.png",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Crandonnell",
+      "addressLocality":"Co. Wexford",
+      "postalCode":"Y35 F5DV",
+      "addressCountry":"IE"
+    },
+    "openingHoursSpecification":[
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"10:00","closes":"18:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"18:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"18:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"18:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"18:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"13:00"}
+    ],
+    "sameAs":[
+      "https://maps.app.goo.gl/L2hMzAhiSbmUiyH1A"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <div class="bg-logo"></div>
+  <div class="bg-fade"></div>
+
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">
+          <img src="/favicon.png" alt="AURA Motors" />
+          <div class="name">
+            <b>AURA MOTORS</b>
+            <span>Crandonnell, Co. Wexford, Y35 F5DV</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="btn primary" href="tel:+353857363599">Call: +353 85 736 3599</a>
+          <a class="btn" href="https://wa.me/353857363599" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn" href="#services">Services</a>
+          <a class="btn" href="#reviews">Reviews</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- LEFT -->
+        <div class="hero-left">
+          <h1>Premium Auto Services<br>in Wexford</h1>
+          <p class="sub">
+            Professional work, clean results, fast turnaround.
+            Choose a service below — each card opens a dedicated page with details, photos and quick contact buttons.
+          </p>
+
+          <div class="pills">
+            <a class="pill" href="#services">Explore services</a>
+            <a class="pill" href="srs.html">SRS / Airbag</a>
+            <a class="pill" href="diagnostics-electrics.html">Diagnostics</a>
+          </div>
+        </div>
+
+        <!-- RIGHT (MAP) -->
+        <div class="map-card">
+          <iframe
+            class="map-frame"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2437.705915907843!2d-6.584749!3d52.339481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48681df4a2353bc9%3A0x122dceecc8799948!2sAURA%20Motors!5e0!3m2!1sru!2sie!4v1771622266799!5m2!1sru!2sie"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen="">
+          </iframe>
+
+          <div class="map-footer">
+            <div class="mini">
+              <b style="color:rgba(234,243,238,.95)">AURA Motors</b><br>
+              Crandonnell, Co. Wexford, Y35 F5DV
+            </div>
+            <a class="btn primary" href="https://maps.app.goo.gl/L2hMzAhiSbmUiyH1A" target="_blank" rel="noopener">
+              Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICES -->
+      <div id="services" class="section-title">Services</div>
+      <div class="cards">
+        <!-- BIG SRS -->
+        <section class="card span-8 taller">
+          <div class="tag">⭐ Top service • Safety electronics</div>
+          <h3>SRS / Airbag Repair</h3>
+          <p>
+            SRS reset • crash data reset • airbag module repair • diagnostics and fault clearing.
+            Quick communication and professional approach.
+          </p>
+          <div class="cta">
+            <a class="linkbtn" href="tel:+353857363599">Call</a>
+            <a class="linkbtn gold" href="srs.html">Learn more</a>
+          </div>
+        </section>
+
+        <!-- Starry Sky (smaller) -->
+        <section class="card span-4 tall">
+          <div class="tag">✨ Custom interior</div>
+          <h3>Starry Sky</h3>
+          <p>
+            Star ceiling installation for cars. Clean finish, premium look, custom options.
+          </p>
+          <div class="cta">
+            <a class="linkbtn" href="https://wa.me/353857363599" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="linkbtn gold" href="starry-sky.html">Learn more</a>
+          </div>
+        </section>
+
+        <!-- NCT -->
+        <section class="card span-6">
+          <div class="tag">✅ Ready for test</div>
+          <h3>Prepare to NCT</h3>
+          <p>Pre-check, basic fixes, advice and preparation to help you pass NCT.</p>
+          <div class="cta">
+            <a class="linkbtn gold" href="nct-prep.html">Learn more</a>
+          </div>
+        </section>
+
+        <!-- Service -->
+        <section class="card span-6">
+          <div class="tag">🛢️ Maintenance</div>
+          <h3>Service (Oil & Filters)</h3>
+          <p>Oil change • filters • basic maintenance. Fast and clean service.</p>
+          <div class="cta">
+            <a class="linkbtn gold" href="service.html">Learn more</a>
+          </div>
+        </section>
+
+        <!-- Diagnostics -->
+        <section class="card span-7">
+          <div class="tag">🔧 Electrical & Diagnostics</div>
+          <h3>Diagnostics + Electrics</h3>
+          <p>Computer diagnostics, electrical troubleshooting, repairs and recommendations.</p>
+          <div class="cta">
+            <a class="linkbtn gold" href="diagnostics-electrics.html">Learn more</a>
+          </div>
+        </section>
+
+        <!-- Valeting -->
+        <section class="card span-5">
+          <div class="tag">🧼 Clean & Shine</div>
+          <h3>Valeting + Polishing</h3>
+          <p>Interior deep clean, exterior wash, polishing, paint correction options.</p>
+          <div class="cta">
+            <a class="linkbtn gold" href="valeting-polishing.html">Learn more</a>
+          </div>
+        </section>
+
+        <!-- PDR -->
+        <section class="card span-12">
+          <div class="tag">🛠️ Paintless dent repair</div>
+          <h3>PDR Service</h3>
+          <p>Paintless dent removal (без покраски). Clean results depending on damage type and location.</p>
+          <div class="cta">
+            <a class="linkbtn" href="tel:+353857363599">Call</a>
+            <a class="linkbtn gold" href="pdr.html">Learn more</a>
+          </div>
+        </section>
+      </div>
+
+      <!-- REVIEWS -->
+      <div id="reviews" class="reviews-wrap">
+        <div class="reviews-head">
+          <h2>Customer Reviews</h2>
+
+          <!-- TODO: сюда вставим твою реальную ссылку на форму отзыва в Google -->
+          <a class="btn primary" href="https://g.page/r/YOUR_REVIEW_LINK/review" target="_blank" rel="noopener">
+            Leave a Review
+          </a>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>Professional SRS repair service. Airbag module reset was completed quickly and without issues.</p>
+            <div class="author">— Michael R.</div>
+          </div>
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>Diagnostics done perfectly. Clear communication and fast turnaround.</p>
+            <div class="author">— David K.</div>
+          </div>
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>Reliable and professional team. Great experience. Will return again.</p>
+            <div class="author">— Patrick O.</div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        © <span id="y"></span> AURA Motors • Crandonnell, Co. Wexford, Y35 F5DV • +353 85 736 3599
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
