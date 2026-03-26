@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-   <url>
-      <loc>https://auramotors-srs.netlify.app/</loc>
-      <priority>1.0</priority>
-   </url>
+
+<url>
+<loc>https://auramotors.ie/</loc>
+<priority>1.0</priority>
+</url>
+
+<url>
+<loc>https://auramotors.ie/srs-repair.html</loc>
+</url>
+
+<url>
+<loc>https://auramotors.ie/diagnostics-electrics.html</loc>
+</url>
+
+<url>
+<loc>https://auramotors.ie/starry-sky.html</loc>
+</url>
+
+<url>
+<loc>https://auramotors.ie/valeting-polishing.html</loc>
+</url>
+
 </urlset>
