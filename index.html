@@ -393,18 +393,17 @@
 }
 .scroll-logo{
   position: fixed;
-  left: 28%;
+  left: 26%;
   top: 42%;
-  width: min(36vw, 520px);
-  height: min(36vw, 520px);
-  background: url("bg-logo.png") center/contain no-repeat;
+  width: min(38vw, 560px);
+  height: min(38vw, 560px);
+  background: url("bg-logo-watermark.png") center/contain no-repeat;
   opacity: 0.09;
   pointer-events: none;
   z-index: 0;
-  transform: translate(-50%, -50%) scale(0.78);
+  transform: translate(-50%, -50%) scale(0.72);
   transform-origin: center center;
   will-change: transform, opacity;
-  filter:blur(0.2px)
 }
 
 .container,
@@ -642,15 +641,15 @@ footer{
 
   function updateLogo() {
     const y = window.scrollY || window.pageYOffset;
-    const max = 1600;
+    const max = 1800;
     const p = Math.min(y / max, 1);
 
     const startX = -50;
-    const endX = -42;   // немного к центру, но не в центр
+    const endX = -28;   // заметно ближе к центру к концу
     const startY = -50;
-    const endY = -38;   // мягко вниз
-    const scale = 0.72 + p * 0.34;
-    const opacity = 0.09 + p * 0.03;
+    const endY = -34;   // мягко ниже
+    const scale = 0.72 + p * 0.42;
+    const opacity = 0.09 + p * 0.035;
 
     const x = startX + (endX - startX) * p;
     const yPos = startY + (endY - startY) * p;
