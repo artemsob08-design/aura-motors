@@ -401,6 +401,35 @@
       .map-frame{ height: 280px; }
       .actions{ justify-content:flex-start; }
     }
+    .hero{
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg-logo{
+  position: absolute;
+  inset: 0;
+  background: url("bg-logo.png") center left / 58% no-repeat;
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 0;
+  filter: brightness(1.05) contrast(1.02);
+}
+
+.hero-bg-overlay{
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 600px at 22% 35%, rgba(9,22,17,.18), transparent 70%),
+    linear-gradient(90deg, rgba(5,14,11,.35) 0%, rgba(5,14,11,.08) 45%, rgba(5,14,11,0) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero .container{
+  position: relative;
+  z-index: 1;
+}
   </style>
 
   <!-- Structured data (Local Business) -->
@@ -435,8 +464,7 @@
 </head>
 
 <body>
-  <div class="bg-logo"></div>
-  <div class="bg-fade"></div>
+ 
 
   <header>
     <div class="container">
@@ -460,6 +488,8 @@
   </header>
 
   <main class="hero">
+   <div class="hero-bg-logo"></div>
+  <div class="hero-bg-overlay"></div>
     <div class="container">
       <div class="hero-grid">
         <!-- LEFT -->
