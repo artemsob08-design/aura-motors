@@ -53,25 +53,6 @@
       overflow-x:hidden;
     }
 
-    /* Background logo (blended, no borders) */
-    .bg-logo{
-  position: fixed;
-  inset: 0;
-  background: url("bg-logo.png") center center / 55% no-repeat;
-  opacity: 0.18;
-  pointer-events: none;
-  z-index: 0;
-  filter: brightness(1.1) contrast(1.05);
-}
-   .bg-fade{
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(900px 600px at 25% 25%, rgba(7,17,13,.20), transparent 70%),
-    radial-gradient(700px 500px at 80% 20%, rgba(0,0,0,.10), transparent 60%);
-  pointer-events: none;
-  z-index: 0;
-}
 
     .container{
       width: min(var(--max), calc(100% - 40px));
@@ -406,43 +387,22 @@
   overflow: hidden;
 }
 
-.hero-bg-logo{
-  position: absolute;
-  inset: 0;
-  background: url("bg-logo.png") center left / 58% no-repeat;
-  opacity: 0.14;
-  pointer-events: none;
-  z-index: 0;
-  filter: brightness(1.05) contrast(1.02);
-}
-
-.hero-bg-overlay{
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(900px 600px at 22% 35%, rgba(9,22,17,.18), transparent 70%),
-    linear-gradient(90deg, rgba(5,14,11,.35) 0%, rgba(5,14,11,.08) 45%, rgba(5,14,11,0) 100%);
-  pointer-events: none;
-  z-index: 0;
-}
-
 .hero .container{
   position: relative;
   z-index: 1;
 }
 .scroll-logo{
   position: fixed;
-  left: 8%;
-  top: 16%;
-  width: min(34vw, 460px);
-  height: min(34vw, 460px);
+  left: 50%;
+  top: 44%;
+  width: min(44vw, 620px);
+  height: min(44vw, 620px);
   background: url("bg-logo.png") center/contain no-repeat;
   opacity: 0.10;
   pointer-events: none;
   z-index: 0;
-  transform: translate3d(0,0,0) scale(1);
+  transform: translate(-50%, -50%) scale(0.78);
   transform-origin: center center;
-  transition: transform 0.08s linear, opacity 0.12s linear;
   will-change: transform, opacity;
 }
 
@@ -512,8 +472,6 @@ footer{
   </header>
 
   <main class="hero">
-   <div class="hero-bg-logo"></div>
-  <div class="hero-bg-overlay"></div>
     <div class="container">
       <div class="hero-grid">
         <!-- LEFT -->
@@ -676,23 +634,22 @@ footer{
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
-  <script>
+ <script>
 (function () {
   const logo = document.querySelector('.scroll-logo');
   if (!logo) return;
 
   function updateLogo() {
     const y = window.scrollY || window.pageYOffset;
-    const max = 900;
+    const max = 1400;
     const p = Math.min(y / max, 1);
 
-    const scale = 1 + p * 0.85;
-    const moveX = p * 140;
-    const moveY = p * 260;
-    const opacity = 0.10 + p * 0.05;
+    const scale = 0.78 + p * 0.42;
+    const moveY = -50 + p * 18;
+    const opacity = 0.10 + p * 0.04;
 
     logo.style.transform =
-      `translate3d(${moveX}px, ${moveY}px, 0) scale(${scale})`;
+      `translate(-50%, ${moveY}%) scale(${scale})`;
     logo.style.opacity = opacity.toFixed(3);
   }
 
@@ -701,5 +658,6 @@ footer{
   window.addEventListener('resize', updateLogo);
 })();
 </script>
+
 </body>
 </html>
