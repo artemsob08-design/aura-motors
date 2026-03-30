@@ -73,6 +73,65 @@
     grid-template-columns:1fr;
   }
 }
+.service-bg-logo{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 900px;
+  height: 900px;
+  transform: translate(-50%, -50%);
+  background: url('/bg-logo.png') center/contain no-repeat;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+.container{
+  position: relative;
+  z-index: 1;
+}
+.service-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin: 60px 0;
+}
+
+.service-row.reverse{
+  direction: rtl;
+}
+
+.service-row.reverse *{
+  direction: ltr;
+}
+
+.service-media img{
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.service-text{
+  backdrop-filter: blur(6px);
+}
+.service-media img{
+  transition: transform 0.4s ease;
+}
+
+.service-media img:hover{
+  transform: scale(1.05);
+}
+@media (max-width: 800px){
+  .service-row{
+    grid-template-columns: 1fr;
+  }
+
+  .service-bg-logo{
+    width: 500px;
+    height: 500px;
+    opacity: 0.03;
+  }
+}
   </style>
 </head>
 <body>
@@ -88,6 +147,7 @@
   </header>
 
   <main class="container">
+    <div class="service-bg-logo"></div>
     <section class="hero">
   <div class="brand-mark">
     <img src="/favicon.png" alt="AURA Motors logo" />
@@ -182,7 +242,11 @@
 </section>
 
 <section class="box">
-  <h2>Need something else?</h2>
+ <h2>Full-Service Automotive Solutions</h2>
+<p>
+We handle everything from routine servicing to complex repairs and custom work. 
+If your request is not listed, just contact us — we’ll find a solution.
+</p>
   <p>
     If the service you need is not listed here, contact us directly.
     AURA Motors covers a broad range of automotive work depending on the vehicle and the job required.
