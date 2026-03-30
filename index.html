@@ -502,6 +502,34 @@ footer{
   max-width:100%;
   min-width:0;
 }
+@media (max-width: 800px){
+  .topbar{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .brand{
+    width: 100%;
+    min-width: 0;
+  }
+
+  .actions{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    justify-content: stretch;
+  }
+
+  .actions .btn,
+  .actions .btn.primary{
+    width: 100%;
+    text-align: center;
+    min-width: 0;
+  }
+}
   </style>
 
   <!-- Structured data (Local Business) -->
@@ -572,7 +600,7 @@ footer{
 
           <div class="pills">
             <a class="pill" href="#services">Explore services</a>
-            <a class="pill" href="srs.html">SRS / Airbag</a>
+            <a class="pill" href="srs-repair.html">SRS / Airbag</a>
             <a class="pill" href="diagnostics-electrics.html">Diagnostics</a>
           </div>
         </div>
