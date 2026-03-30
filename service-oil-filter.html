@@ -21,6 +21,58 @@
     p{color:var(--muted);line-height:1.6}
     .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
     .box{margin:24px 0;padding:18px;border:1px solid rgba(255,255,255,.08);border-radius:16px;background:rgba(255,255,255,.03)}
+    .service-row{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:24px;
+  align-items:center;
+  margin:28px 0;
+}
+
+.service-row.reverse{
+  grid-template-columns:.9fr 1.1fr;
+}
+
+.service-media img{
+  width:100%;
+  display:block;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.08);
+  object-fit:cover;
+}
+
+.service-text h2{
+  margin:0 0 12px;
+}
+
+.service-text p{
+  margin:0 0 14px;
+}
+
+.service-text ul{
+  margin:0;
+  padding-left:18px;
+}
+
+.brand-mark{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:18px;
+}
+
+.brand-mark img{
+  width:44px;
+  height:44px;
+  border-radius:12px;
+}
+
+@media (max-width: 800px){
+  .service-row,
+  .service-row.reverse{
+    grid-template-columns:1fr;
+  }
+}
   </style>
 </head>
 <body>
@@ -37,17 +89,111 @@
 
   <main class="container">
     <section class="hero">
-      <h1>Service Title</h1>
-      <p>Short description of this service (we will customise it).</p>
-      <div class="box">
-        <strong>What we do</strong>
-        <ul>
-          <li>Point 1</li>
-          <li>Point 2</li>
-          <li>Point 3</li>
-        </ul>
-      </div>
-    </section>
+  <div class="brand-mark">
+    <img src="/favicon.png" alt="AURA Motors logo" />
+    <div>
+      <strong>AURA Motors</strong><br />
+      <span>Professional vehicle services in Wexford</span>
+    </div>
+  </div>
+
+  <h1>Car Service & General Repairs</h1>
+  <p>
+    Professional vehicle servicing, maintenance and repair in Wexford.
+    We provide a wide range of automotive services — from oil and filter changes
+    to paintwork, dent repair, tuning installation and technical fault solving.
+  </p>
+</section>
+
+<section class="service-row">
+  <div class="service-text box">
+    <h2>Oil & Filter Replacement</h2>
+    <p>
+      Regular oil and filter changes help protect the engine and keep the vehicle
+      running smoothly. This service is one of the most important parts of routine maintenance.
+    </p>
+    <ul>
+      <li>Engine oil replacement</li>
+      <li>Oil filter replacement</li>
+      <li>Basic service inspection</li>
+      <li>Vehicle condition check</li>
+    </ul>
+  </div>
+  <div class="service-media">
+    <img src="/image10.jpg" alt="Oil and filter service" />
+  </div>
+</section>
+
+<section class="service-row reverse">
+  <div class="service-media">
+    <img src="/image11.jpg" alt="Bodywork and paint service" />
+  </div>
+  <div class="service-text box">
+    <h2>Bodywork, Paint & Dent Repair</h2>
+    <p>
+      We help restore the appearance of vehicles with paint correction, repainting,
+      bodywork preparation and dent repair. Clean finish and attention to detail always matter.
+    </p>
+    <ul>
+      <li>Paintwork and resprays</li>
+      <li>Dent repair</li>
+      <li>Body panel correction</li>
+      <li>Vehicle appearance restoration</li>
+    </ul>
+  </div>
+</section>
+
+<section class="service-row">
+  <div class="service-text box">
+    <h2>Tuning & Installation</h2>
+    <p>
+      If you want to upgrade the appearance or setup of your car, we can help with
+      fitting selected tuning parts, accessories and custom improvements.
+    </p>
+    <ul>
+      <li>Exterior upgrades</li>
+      <li>Interior additions</li>
+      <li>Custom installation work</li>
+      <li>Vehicle styling improvements</li>
+    </ul>
+  </div>
+  <div class="service-media">
+    <img src="/image12.jpg" alt="Tuning installation" />
+  </div>
+</section>
+
+<section class="service-row reverse">
+  <div class="service-media">
+    <img src="/image13.jpg" alt="Technical diagnostics and repair" />
+  </div>
+  <div class="service-text box">
+    <h2>Technical Diagnostics & Fault Solving</h2>
+    <p>
+      We help identify technical issues and provide practical repair solutions.
+      This includes fault finding, technical checks and guidance on the best next step.
+    </p>
+    <ul>
+      <li>Fault finding</li>
+      <li>Technical diagnostics</li>
+      <li>Electrical and mechanical issue checks</li>
+      <li>Repair recommendations</li>
+    </ul>
+  </div>
+</section>
+
+<section class="box">
+  <h2>Need something else?</h2>
+  <p>
+    If the service you need is not listed here, contact us directly.
+    AURA Motors covers a broad range of automotive work depending on the vehicle and the job required.
+  </p>
+
+  <div class="actions">
+    <a class="btn" href="tel:+353857363599">Call us</a>
+    <a class="btn" target="_blank" href="https://wa.me/353857363599">WhatsApp</a>
+    <a class="btn gold" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=AURA+Motors+Wexford">Get directions</a>
+  </div>
+</section>
   </main>
 </body>
 </html>
