@@ -6,29 +6,86 @@
   <title>SRS Repair & Dashboard Repair in Wexford | Airbag & Seat Repair Ireland</title>
   <meta name="description" content="Professional SRS repair, dashboard repair, seat repair and airbag module reset in Wexford, Ireland. Fast turnaround. Call or WhatsApp for vehicle safety system restoration." />
   <style>
-    :root{
-      --bg:#0b0f14;
-      --card:#111824;
-      --text:#e9eef6;
-      --muted:#a7b2c2;
-      --line:#223047;
-      --accent:#7aa7ff;
-      --accent2:#6ee7b7;
-      --shadow: 0 20px 50px rgba(0,0,0,.45);
-      --radius: 18px;
-      --max: 1100px;
-    }
-    *{box-sizing:border-box}
-    body{
+:root{
+  --bg:#071412;
+  --bg2:#0b1d19;
+  --card:rgba(255,255,255,.05);
+  --card2:rgba(255,255,255,.03);
+  --line:rgba(214,182,110,.18);
+  --text:#eef3ee;
+  --muted:rgba(238,243,238,.72);
+  --gold:#d6b66e;
+  --gold2:#b89345;
+  --shadow:0 24px 60px rgba(0,0,0,.35);
+  --radius:22px;
+}
+
+*{box-sizing:border-box}
+
+html,body{
   margin:0;
+  padding:0;
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+body{
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   color:var(--text);
   background:
     radial-gradient(1000px 600px at 20% 0%, rgba(214,182,110,.10), transparent 60%),
     radial-gradient(900px 500px at 100% 10%, rgba(40,140,90,.10), transparent 60%),
     linear-gradient(180deg, var(--bg), var(--bg2));
-  overflow-x:hidden;
 }
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.wrap{
+  width:min(1200px, calc(100% - 40px));
+  margin:0 auto;
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:20px 0 10px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.dot{
+  display:none;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 12px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:999px;
+  background:rgba(255,255,255,.03);
+  color:var(--muted);
+  font-size:14px;
+}
+
+.pill{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
 .btn{
   display:inline-flex;
   align-items:center;
@@ -40,7 +97,6 @@
   background:rgba(255,255,255,.03);
   color:var(--text);
   font-weight:600;
-  text-decoration:none;
   transition:transform .2s ease, border-color .2s ease, background .2s ease;
 }
 
@@ -50,344 +106,127 @@
   background:rgba(255,255,255,.05);
 }
 
-.btn.gold{
+.btn.primary{
   background:linear-gradient(135deg, var(--gold), var(--gold2));
   color:#111;
   border:0;
 }
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px;}
-    .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px; padding:10px 0 22px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px;
-    }
-    .dot{
-      width:12px;height:12px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));
-      box-shadow:0 0 0 6px rgba(122,167,255,.10);
-    }
-    .pill{
-      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
-    }
-   .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:13px 18px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.14);
-  background:rgba(255,255,255,.03);
-  color:var(--text);
-  font-weight:600;
-  text-decoration:none;
-  transition:transform .2s ease, border-color .2s ease, background .2s ease;
+
+.hero{
+  display:grid;
+  grid-template-columns:1.7fr 1fr;
+  gap:18px;
+  margin-top:18px;
 }
 
-.btn:hover{
-  transform:translateY(-1px);
-  border-color:rgba(255,255,255,.22);
-  background:rgba(255,255,255,.05);
-}
-
-.btn.gold{
-  background:linear-gradient(135deg, var(--gold), var(--gold2));
-  color:#111;
-  border:0;
-}
-    .hero{
-      margin-top: 8px;
-      display:grid; grid-template-columns: 1.2fr .8fr; gap:18px;
-      align-items:stretch;
-    }
-    @media (max-width: 900px){
-      .hero{grid-template-columns:1fr}
-      .pill{justify-content:flex-start}
-    }
-    .card{
+.card{
   background:var(--card);
   border:1px solid rgba(255,255,255,.10);
   border-radius:22px;
   box-shadow:var(--shadow);
   backdrop-filter:blur(10px);
-}
-    .hero-left{padding:26px 22px}
-    h1{
-      margin:0 0 10px;
-      font-size: clamp(28px, 3.2vw, 44px);
-      letter-spacing: -.6px;
-      line-height:1.1;
-    }
-    .sub{
-      color:var(--muted);
-      font-size: 16px;
-      max-width: 62ch;
-      margin: 0 0 18px;
-    }
-    .badges{display:flex; flex-wrap:wrap; gap:10px; margin-top: 14px;}
-    .badge{
-      padding:8px 10px; border-radius:999px;
-      border:1px solid rgba(34,48,71,.9);
-      background: rgba(11,15,20,.35);
-      color: var(--muted);
-      font-weight:600;
-      font-size: 13px;
-    }
-    .hero-right{
-      display:flex; flex-direction:column;
-    }
-    .hero-right .panel{
-      padding:18px 18px 16px;
-      display:flex; flex-direction:column; gap:10px;
-    }
-    .panel h3{margin:0; font-size:16px;}
-    .panel p{margin:0; color:var(--muted); font-size:14px;}
-    .grid{
-      margin-top:18px;
-      display:grid; grid-template-columns: 1fr 1fr 1fr;
-      gap:14px;
-    }
-    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
-    .section{padding:18px;}
-    .section h2{
-      margin: 2px 0 10px;
-      font-size: 18px;
-      letter-spacing: -.2px;
-    }
-    .list{
-      margin:0; padding-left: 18px; color:var(--muted);
-    }
-    .list li{margin:7px 0}
-    .gallery{
-      display:grid; grid-template-columns: repeat(3, 1fr);
-      gap:10px; padding:18px;
-    }
-    @media (max-width: 900px){ .gallery{grid-template-columns:1fr 1fr} }
-    @media (max-width: 520px){ .gallery{grid-template-columns:1fr} }
-    .ph{
-      border-radius: 14px;
-      border:1px solid rgba(34,48,71,.9);
-      background:
-        radial-gradient(900px 300px at 30% 0%, rgba(122,167,255,.20), transparent 60%),
-        radial-gradient(800px 280px at 100% 10%, rgba(110,231,183,.12), transparent 60%),
-        rgba(11,15,20,.35);
-      aspect-ratio: 4/3;
-      overflow:hidden;
-      position:relative;
-    }
-    .ph img{
-      width:100%; height:100%;
-      object-fit:cover;
-      display:block;
-      filter: contrast(1.05) saturate(1.05);
-    }
-    .ph span{
-      position:absolute; left:10px; bottom:10px;
-      font-size: 12px; color: rgba(233,238,246,.85);
-      background: rgba(0,0,0,.35);
-      border:1px solid rgba(255,255,255,.10);
-      padding:6px 8px; border-radius: 999px;
-      backdrop-filter: blur(6px);
-    }
-    .footer{
-      margin-top: 16px;
-      padding: 18px;
-      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
-      color:var(--muted);
-      font-size: 13px;
-    }
-    .contact-row{display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px;}
-    .small{font-size: 12px; color: var(--muted);}
-    .hr{height:1px; background: rgba(34,48,71,.9); margin: 12px 0;}
-    /* LOCATION SECTION */
-
-.location-section {
-    padding: 80px 20px;
-    background: #111824;
+  padding:24px;
 }
 
-.location-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: center;
+.hero-left h1{
+  margin:0 0 14px;
+  font-size:clamp(34px, 4.4vw, 58px);
+  line-height:.96;
+  letter-spacing:-.03em;
 }
 
-.location-section h2 {
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-.location-address {
-    color: #a7b2c2;
-    margin-bottom: 25px;
-    line-height: 1.6;
-}
-
-.directions-btn {
-    display: inline-block;
-    padding: 14px 28px;
-    background: linear-gradient(135deg, #7aa7ff, #6ee7b7);
-    color: #000;
-    border-radius: 12px;
-    font-weight: 600;
-    text-decoration: none;
-    margin-bottom: 40px;
-    transition: 0.3s ease;
-}
-
-.directions-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(122,167,255,0.3);
-}
-
-.map-wrapper {
-    width: 100%;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.45);
-}
-
-.map-wrapper iframe {
-    width: 100%;
-    height: 450px;
-    border: 0;
-}
-
-@media (max-width: 768px) {
-    .map-wrapper iframe {
-        height: 300px;
-    }
-}
-.reviews-section {
-    padding: 80px 20px;
-    background: #0f1724;
-}
-
-.reviews-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.reviews-section h2 {
-    font-size: 32px;
-    margin-bottom: 50px;
-}
-
-.reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.review-card {
-    background: #111824;
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    text-align: left;
-    transition: 0.3s ease;
-}
-
-.review-card:hover {
-    transform: translateY(-5px);
-}
-
-.stars {
-    color: #fbbf24;
-    font-size: 20px;
-    margin-bottom: 15px;
-}
-
-.review-card p {
-    color: #a7b2c2;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.review-author {
-    font-weight: 600;
-    color: #e9eef6;
-}
-.review-cta {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.google-review-btn {
-    display: inline-block;
-    padding: 14px 28px;
-    background: linear-gradient(135deg, #7aa7ff, #4f7dff);
-    color: #fff;
-    font-weight: 600;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: 0.3s ease;
-}
-
-.google-review-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-.page-header{
-  position:sticky;
-  top:0;
-  z-index:20;
-  backdrop-filter: blur(12px);
-  background:rgba(7,20,18,.65);
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-
-.container{
-  width:min(1200px, calc(100% - 40px));
-  margin:0 auto;
-}
-
-.topbar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  padding:16px 0;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  min-width:0;
-}
-
-.brand img{
-  width:48px;
-  height:48px;
-  border-radius:14px;
-  flex:0 0 auto;
-}
-
-.brand-text b{
-  display:block;
-  font-size:15px;
-  letter-spacing:.04em;
-}
-
-.brand-text span{
-  display:block;
-  font-size:14px;
+.sub{
   color:var(--muted);
-  line-height:1.25;
+  font-size:18px;
+  line-height:1.6;
+  margin:0 0 20px;
 }
 
-.header-actions{
+.contact-row{
   display:flex;
-  gap:10px;
+  gap:12px;
   flex-wrap:wrap;
-  justify-content:flex-end;
+  margin-bottom:18px;
 }
+
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.badges span{
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.03);
+  color:var(--muted);
+  font-size:13px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:18px;
+  margin-top:18px;
+}
+
+.grid .wide{
+  grid-column:span 2;
+}
+
+h2,h3{
+  margin:0 0 12px;
+}
+
+p,li{
+  color:var(--muted);
+  line-height:1.6;
+}
+
+ul{
+  margin:0;
+  padding-left:18px;
+}
+
+.section-title{
+  margin:26px 0 12px;
+  font-size:24px;
+}
+
+.work-photos{
+  margin-top:18px;
+}
+
+.photo-box{
+  min-height:240px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.02);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:rgba(238,243,238,.45);
+  text-align:center;
+  padding:20px;
+}
+
+@media (max-width: 980px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  .grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .grid .wide{
+    grid-column:span 2;
+  }
+}
+
 @media (max-width: 800px){
-  .container{
+  .wrap{
     width:min(calc(100% - 24px), 1200px);
   }
 
@@ -396,30 +235,38 @@
     align-items:flex-start;
   }
 
-  .header-actions{
+  .pill{
     width:100%;
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:10px;
   }
 
-  .header-actions .btn{
+  .pill .btn{
     width:100%;
   }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .grid .wide{
+    grid-column:auto;
+  }
+
+  .card{
+    padding:20px;
+  }
+
+  .hero-left h1{
+    font-size:42px;
+  }
+
+  .sub{
+    font-size:17px;
+  }
 }
-.eyebrow{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:8px 12px;
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:999px;
-  background:rgba(255,255,255,.03);
-  color:var(--muted);
-  font-size:14px;
-  margin-bottom:18px;
-}
-  </style>
+</style>
   <!-- SEO Title -->
 <title>SRS Airbag Repair Ireland | AURA Motors</title>
 
