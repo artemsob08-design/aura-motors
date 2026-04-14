@@ -301,11 +301,7 @@ ul{
 }
 
 .bottom-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-  margin-top:22px;
-  align-items:start;
+  grid-template-columns:1fr;
 }
 
 .info-card{
@@ -378,17 +374,50 @@ ul{
 }
 
 @media (max-width: 800px){
+
   .photo-grid{
     grid-template-columns:1fr;
   }
-}
+
+  .bottom-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
   .photo-card img{
     height:220px;
   }
 
   .map-wrap iframe{
-    height:240px;
+    height:260px;
+    width:100%;
   }
+
+  .btn{
+    width:100%;
+    justify-content:center;
+  }
+
+  .info-card{
+    padding:18px;
+  }
+
+  .info-card h3{
+    font-size:20px;
+  }
+
+  .review{
+    padding:14px;
+  }
+
+}
 
 </style>
   <!-- SEO Title -->
