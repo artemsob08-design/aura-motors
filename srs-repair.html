@@ -266,6 +266,130 @@ ul{
     font-size:17px;
   }
 }
+.section-title{
+  margin:26px 0 12px;
+  font-size:24px;
+}
+
+.photo-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:14px;
+}
+
+.photo-card{
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+.photo-card img{
+  display:block;
+  width:100%;
+  height:320px;
+  object-fit:cover;
+}
+
+.photo-card .caption{
+  padding:14px 16px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.5;
+}
+
+.bottom-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:22px;
+}
+
+.info-card{
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  padding:22px;
+}
+
+.info-card h3{
+  margin:0 0 12px;
+  font-size:24px;
+}
+
+.map-wrap{
+  overflow:hidden;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.10);
+  margin-top:14px;
+}
+
+.map-wrap iframe{
+  display:block;
+  width:100%;
+  height:280px;
+  border:0;
+}
+
+.review-list{
+  display:grid;
+  gap:14px;
+  margin-top:14px;
+}
+
+.review{
+  padding:16px 18px;
+  border-radius:18px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.review .stars{
+  color:var(--gold);
+  margin-bottom:8px;
+  font-size:15px;
+  letter-spacing:1px;
+}
+
+.review p{
+  margin:0 0 10px;
+  color:var(--text);
+}
+
+.review strong{
+  color:var(--muted);
+  font-weight:600;
+}
+
+.page-footer{
+  margin:24px 0 40px;
+  padding:20px 24px;
+  border-radius:22px;
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:var(--shadow);
+  color:var(--muted);
+  text-align:center;
+  line-height:1.6;
+}
+
+@media (max-width: 800px){
+  .photo-grid,
+  .bottom-grid{
+    grid-template-columns:1fr;
+  }
+
+  .photo-card img{
+    height:220px;
+  }
+
+  .map-wrap iframe{
+    height:240px;
+  }
+}
 </style>
   <!-- SEO Title -->
 <title>SRS Airbag Repair Ireland | AURA Motors</title>
@@ -407,117 +531,79 @@ ul{
       </div>
     </div>
 
-    <div class="card" style="margin-top:14px;">
-      <div class="section">
-        <h2>Work Photos</h2>
-        <p class="sub" style="margin:0;">
-          Add your real photos here. For now you can keep placeholders or replace them with your images.
-        </p>
+   <div class="card" style="margin-top:14px;">
+  <div class="section">
+    <h2 class="section-title">Work Photos</h2>
+
+    <div class="photo-grid">
+      <div class="photo-card">
+        <img src="/images/photo9.jpg" alt="Before and after SRS dashboard restoration" />
+        <div class="caption">Before / after interior restoration after airbag deployment.</div>
       </div>
 
-      <div class="gallery">
-        <!-- Option A (placeholders): keep empty and it will show a nice block -->
-        <div class="ph">
-  <img src="images/photo9.jpg" alt="SRS repair">
-  <span>Before / After</span>
-</div>
-        <div class="ph">
-  <img src="images/photo2.jpg" alt="SRS repair">
-  <span>Dashboard Restoration</span>
-</div>
-        <div class="ph">
-  <img src="images/photo3.jpg" alt="SRS repair">
-  <span>Seat Restoration</span>
-</div>
-        <div class="ph">
-  <img src="images/photo4.jpg" alt="SRS repair">
-  <span>Seat Restoration</span>
-</div>
-        
-<div class="ph">
-  <img src="images/photo5.jpg" alt="SRS repair">
-  <span>Before / After</span>
-</div>
-        
-<div class="ph">
-  <img src="images/photo7.jpg" alt="SRS repair">
-  <span>Ceiling Restoration.</span>
-</div>
-
-        <!-- Option B (your images): put images into /images folder and uncomment lines like this:
-        <div class="ph"><img src="images/photo1.jpg" alt="SRS repair photo"><span>Before / After</span></div>
-        -->
+      <div class="photo-card">
+        <img src="/images/photo3.jpg" alt="Seat restoration work" />
+        <div class="caption">Interior restoration and seat repair work.</div>
       </div>
     </div>
 
-    <div class="card footer">
-      <div>© <span id="y"></span> Auto Safety Restoration Ireland Co.Wexford</div>
-      <div class="small">Call or WhatsApp: <strong>+353 0857363599</strong></div>
+    <div class="bottom-grid">
+      <div class="info-card">
+        <h3>Find Us in Wexford</h3>
+        <p>
+          <strong>AURA Motors</strong><br>
+          Crandonnell, Co. Wexford, Y35 F5DV
+        </p>
+
+        <div style="margin-top:14px;">
+          <a class="btn primary" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=AURA+Motors+Wexford">
+            Get Directions
+          </a>
+        </div>
+
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2437.7059159078!2d-6.909090!3d52.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4867b0c000000001%3A0x0000000000000000!2sAURA%20Motors!5e0!3m2!1sen!2sie!4v0000000000000"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen="">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <h3>Customer Reviews</h3>
+
+        <div class="review-list">
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>Professional SRS repair service. Airbag module reset was completed quickly and without issues. Highly recommended.</p>
+            <strong>— Michael R.</strong>
+          </div>
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>Dashboard repair and electrical diagnostics done perfectly. Clear communication and fast turnaround.</p>
+            <strong>— David K.</strong>
+          </div>
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>Reliable and professional team. Great experience with crash data reset service. Will return again.</p>
+            <strong>— Patrick O.</strong>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;">
+          <a class="btn" target="_blank" href="https://maps.app.goo.gl/L2hMzAhiSbmU1yh1A">Leave a Review on Google</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      © 2026 AURA Motors • Crandonnell, Co. Wexford, Y35 F5DV • Call or WhatsApp: +353 85 736 3599
     </div>
   </div>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-  <section class="location-section">
-    <div class="location-container">
-        <h2>Find Us in Wexford</h2>
-        <p class="location-address">
-            AURA Motors<br>
-            Taghmon, Co. Wexford<br>
-            Y35F5DV, Ireland
-        </p>
-
-        <a class="directions-btn"
-           href="https://www.google.com/maps/dir/?api=1&destination=52.339481,-6.584749"
-           target="_blank">
-           📍 Get Directions
-        </a>
-
-        <div class="map-wrapper">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2437.705915907843!2d-6.584749!3d52.339481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48681df4a2353bc9%3A0x122dceecc8799948!2sAURA%20Motors!5e0!3m2!1sru!2sie!4v1771622266799!5m2!1sru!2sie"
-                loading="lazy"
-                allowfullscreen>
-            </iframe>
-        </div>
-    </div>
-</section>
-<section class="reviews-section">
-    <div class="reviews-container">
-        <h2>Customer Reviews</h2>
-
-        <div class="reviews-grid">
-
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p>
-                    Professional SRS repair service. Airbag module reset was completed quickly and without issues. Highly recommended.
-                </p>
-                <span class="review-author">— Michael R.</span>
-            </div>
-
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p>
-                    Dashboard repair and electrical diagnostics done perfectly. Clear communication and fast turnaround.
-                </p>
-                <span class="review-author">— David K.</span>
-            </div>
-
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p>
-                    Reliable and professional team. Great experience with crash data reset service. Will return again.
-                </p>
-                <span class="review-author">— Patrick O.</span>
-            </div>
-
-        </div>
-        <div class="review-cta">
-    <a href="https://g.page/r/CUiZecjszi0SEBM/review" target="_blank" class="google-review-btn">
-        Leave a Review on Google
-    </a>
 </div>
     </div>
 </section>
