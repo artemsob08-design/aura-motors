@@ -3,51 +3,649 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="apple-touch-icon" href="/favicon.png">
-  <title>AURA Motors | Service</title>
+  <title>Prepare for NCT | AURA Motors</title>
+  <meta name="description" content="Pre-NCT vehicle inspection, diagnostics and preparation in Wexford. AURA Motors checks key systems and helps prepare your car before the NCT test." />
+
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
 
   <style>
-    :root{--bg:#071412;--text:#e9eef6;--muted:#a7b2c2;--gold:#d6b25e;--gold2:#b8943a;}
+    :root{
+      --bg:#071412;
+      --bg2:#0b1f1a;
+      --card:rgba(255,255,255,.055);
+      --line:rgba(255,255,255,.14);
+      --text:#eef3ee;
+      --muted:#b8c5bd;
+      --gold:#d6b25e;
+      --gold2:#f0cf7a;
+      --shadow:0 24px 70px rgba(0,0,0,.38);
+      --radius:24px;
+      --max:1180px;
+    }
+
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .container{max-width:1000px;margin:0 auto;padding:0 20px}
-    header{padding:22px 0;border-bottom:1px solid rgba(255,255,255,.06)}
-    a{color:var(--text);text-decoration:none}
-    .btn{display:inline-block;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);font-weight:600}
-    .btn.gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#111;border:0}
-    .hero{padding:34px 0}
-    h1{margin:0 0 10px;font-size:34px}
-    p{color:var(--muted);line-height:1.6}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-    .box{margin:24px 0;padding:18px;border:1px solid rgba(255,255,255,.08);border-radius:16px;background:rgba(255,255,255,.03)}
+
+    html,body{
+      margin:0;
+      overflow-x:hidden;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(214,178,94,.11), transparent 28%),
+        radial-gradient(circle at 90% 30%, rgba(60,120,96,.14), transparent 32%),
+        linear-gradient(180deg,var(--bg),var(--bg2));
+      color:var(--text);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:url("/bg-logo-watermark.png") center 38% / min(70vw,760px) no-repeat;
+      opacity:.055;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .wrap{
+      position:relative;
+      z-index:1;
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+      padding:26px 0 50px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:14px 0 24px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .brand img{
+      width:54px;
+      height:54px;
+      border-radius:16px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+
+    .brand strong{
+      display:block;
+      letter-spacing:.08em;
+      font-size:15px;
+    }
+
+    .brand span{
+      display:block;
+      color:var(--muted);
+      font-size:13px;
+      margin-top:2px;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:42px;
+      padding:11px 16px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.045);
+      color:var(--text);
+      font-weight:700;
+      box-shadow:0 10px 28px rgba(0,0,0,.18);
+      transition:.25s ease;
+      white-space:nowrap;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      border-color:rgba(214,178,94,.55);
+      background:rgba(255,255,255,.08);
+    }
+
+    .btn.primary{
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      color:#111;
+      border-color:transparent;
+    }
+
+    .hero{
+      min-height:520px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      align-items:center;
+      gap:28px;
+      padding:34px 0 30px;
+    }
+
+    .hero-card,
+    .glass-card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(14px);
+    }
+
+    .hero-card{
+      padding:34px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-card::after{
+      content:"";
+      position:absolute;
+      right:-120px;
+      bottom:-160px;
+      width:440px;
+      height:440px;
+      background:url("/bg-logo-watermark.png") center/contain no-repeat;
+      opacity:.07;
+      pointer-events:none;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(214,178,94,.35);
+      color:var(--gold2);
+      background:rgba(214,178,94,.08);
+      font-size:13px;
+      font-weight:800;
+      margin-bottom:18px;
+    }
+
+    h1{
+      position:relative;
+      z-index:1;
+      margin:0;
+      font-size:clamp(42px, 6vw, 82px);
+      line-height:.94;
+      letter-spacing:-.06em;
+    }
+
+    .sub{
+      position:relative;
+      z-index:1;
+      max-width:720px;
+      margin:22px 0 0;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.65;
+    }
+
+    .hero-buttons{
+      position:relative;
+      z-index:1;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:26px;
+    }
+
+    .hero-side{
+      padding:24px;
+    }
+
+    .quick-card{
+      padding:22px;
+      border-radius:22px;
+      background:rgba(255,255,255,.045);
+      border:1px solid var(--line);
+      margin-bottom:16px;
+    }
+
+    .quick-card h3{
+      margin:0 0 12px;
+      font-size:22px;
+    }
+
+    .quick-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.55;
+    }
+
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+
+    .badges span{
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      color:var(--muted);
+      background:rgba(255,255,255,.035);
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .section-title{
+      margin:34px 0 16px;
+      color:var(--gold2);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:15px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .glass-card{
+      padding:24px;
+    }
+
+    .icon{
+      width:48px;
+      height:48px;
+      display:grid;
+      place-items:center;
+      border-radius:16px;
+      background:rgba(214,178,94,.12);
+      border:1px solid rgba(214,178,94,.28);
+      font-size:24px;
+      margin-bottom:14px;
+    }
+
+    .glass-card h2{
+      margin:0 0 10px;
+      font-size:24px;
+      letter-spacing:-.03em;
+    }
+
+    .glass-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    .service-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      align-items:stretch;
+      margin-top:18px;
+    }
+
+    .service-row.reverse .media{
+      order:-1;
+    }
+
+    .text-box{
+      padding:28px;
+    }
+
+    .text-box h2{
+      margin:0 0 12px;
+      font-size:30px;
+      letter-spacing:-.04em;
+    }
+
+    .text-box ul{
+      margin:18px 0 0;
+      padding-left:20px;
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    .media{
+      overflow:hidden;
+      min-height:330px;
+      padding:0;
+    }
+
+    .media img{
+      width:100%;
+      height:100%;
+      min-height:330px;
+      object-fit:cover;
+      display:block;
+      filter:saturate(.95) contrast(1.04);
+      transition:.5s ease;
+    }
+
+    .media:hover img{
+      transform:scale(1.04);
+    }
+
+    .cta{
+      margin-top:24px;
+      padding:30px;
+      text-align:center;
+      border-radius:var(--radius);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(214,178,94,.16), transparent 42%),
+        rgba(255,255,255,.055);
+      border:1px solid rgba(214,178,94,.24);
+      box-shadow:var(--shadow);
+    }
+
+    .cta h2{
+      margin:0 0 12px;
+      font-size:34px;
+      letter-spacing:-.04em;
+    }
+
+    .cta p{
+      margin:0 auto;
+      max-width:760px;
+      color:var(--muted);
+      line-height:1.65;
+    }
+
+    .footer{
+      margin-top:24px;
+      padding:20px;
+      text-align:center;
+      color:var(--muted);
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.035);
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(24px);
+      animation:reveal .75s ease forwards;
+    }
+
+    .delay-1{animation-delay:.12s}
+    .delay-2{animation-delay:.22s}
+    .delay-3{animation-delay:.32s}
+
+    @keyframes reveal{
+      to{
+        opacity:1;
+        transform:none;
+      }
+    }
+
+    @media (max-width: 900px){
+      .hero,
+      .service-row,
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .service-row.reverse .media{
+        order:0;
+      }
+
+      .topbar{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .actions{
+        width:100%;
+        justify-content:flex-start;
+      }
+    }
+
+    @media (max-width: 560px){
+      .wrap{
+        width:min(100% - 28px, var(--max));
+        padding-top:18px;
+      }
+
+      .brand img{
+        width:48px;
+        height:48px;
+      }
+
+      .actions{
+        display:grid;
+        grid-template-columns:1fr;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .hero{
+        min-height:auto;
+        padding-top:16px;
+      }
+
+      .hero-card{
+        padding:24px;
+      }
+
+      h1{
+        font-size:44px;
+      }
+
+      .sub{
+        font-size:16px;
+      }
+
+      .hero-buttons{
+        display:grid;
+        grid-template-columns:1fr;
+      }
+
+      .text-box{
+        padding:22px;
+      }
+
+      .text-box h2{
+        font-size:26px;
+      }
+
+      .media,
+      .media img{
+        min-height:240px;
+      }
+
+      .cta h2{
+        font-size:28px;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
-      <a class="btn" href="index.html">← Back to services</a>
-      <div class="actions">
+  <div class="wrap">
+
+    <header class="topbar reveal">
+      <a class="brand" href="index.html">
+        <img src="/favicon.png" alt="AURA Motors logo" />
+        <div>
+          <strong>AURA MOTORS</strong>
+          <span>Crandonnell, Co. Wexford, Y35 F5DV</span>
+        </div>
+      </a>
+
+      <nav class="actions">
+        <a class="btn" href="index.html">← Back to Services</a>
         <a class="btn" href="tel:+353857363599">Call</a>
         <a class="btn" target="_blank" href="https://wa.me/353857363599">WhatsApp</a>
-        <a class="btn gold" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=Y35+F5DV+Wexford+Ireland">Get Directions</a>
-      </div>
-    </div>
-  </header>
+        <a class="btn primary" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=AURA+Motors+Wexford">Get Directions</a>
+      </nav>
+    </header>
 
-  <main class="container">
-    <section class="hero">
-      <h1>Service Title</h1>
-      <p>Short description of this service (we will customise it).</p>
-      <div class="box">
-        <strong>What we do</strong>
-        <ul>
-          <li>Point 1</li>
-          <li>Point 2</li>
-          <li>Point 3</li>
-        </ul>
-      </div>
-    </section>
-  </main>
+    <main>
+      <section class="hero">
+        <div class="hero-card reveal delay-1">
+          <span class="eyebrow">✅ Ready for test</span>
+          <h1>Prepare<br>for NCT</h1>
+          <p class="sub">
+            We inspect and prepare your vehicle before the NCT test. Our goal is to find possible issues early,
+            explain what needs attention, and help your car arrive at the test in the best possible condition.
+          </p>
+
+          <div class="hero-buttons">
+            <a class="btn primary" href="tel:+353857363599">Call now</a>
+            <a class="btn" target="_blank" href="https://wa.me/353857363599">Message on WhatsApp</a>
+          </div>
+
+          <div class="badges">
+            <span>Pre-NCT check</span>
+            <span>Diagnostics</span>
+            <span>Safety inspection</span>
+            <span>Wexford</span>
+          </div>
+        </div>
+
+        <aside class="hero-side glass-card reveal delay-2">
+          <div class="quick-card">
+            <h3>What we do</h3>
+            <p>
+              We check the most important systems before the test and help you understand what needs to be fixed.
+            </p>
+          </div>
+
+          <div class="quick-card">
+            <h3>Why it helps</h3>
+            <p>
+              A pre-check can save time, reduce stress, and help avoid simple issues that could fail the NCT.
+            </p>
+          </div>
+
+          <div class="quick-card">
+            <h3>Before you book</h3>
+            <p>
+              Send us your car make, model, year and any warning lights or issues you already know about.
+            </p>
+          </div>
+        </aside>
+      </section>
+
+      <h2 class="section-title reveal">Main NCT preparation checks</h2>
+
+      <section class="grid">
+        <div class="glass-card reveal">
+          <div class="icon">🔍</div>
+          <h2>Full Inspection</h2>
+          <p>Visual check of key parts before the NCT, including common failure points and general roadworthiness.</p>
+        </div>
+
+        <div class="glass-card reveal delay-1">
+          <div class="icon">💻</div>
+          <h2>Diagnostics</h2>
+          <p>Computer scan and fault code check to help identify warning lights, electrical faults and hidden issues.</p>
+        </div>
+
+        <div class="glass-card reveal delay-2">
+          <div class="icon">🛠️</div>
+          <h2>Pre-Test Fixes</h2>
+          <p>We can help with repairs and adjustments depending on the vehicle condition and the work required.</p>
+        </div>
+      </section>
+
+      <h2 class="section-title reveal">What we inspect</h2>
+
+      <section class="service-row">
+        <div class="text-box glass-card reveal">
+          <h2>Safety & road condition</h2>
+          <p>
+            We check important safety-related items that are commonly inspected during NCT.
+          </p>
+          <ul>
+            <li>Lights, indicators and brake lights</li>
+            <li>Tyre condition and visible damage</li>
+            <li>Brakes and basic braking condition</li>
+            <li>Suspension and steering checks</li>
+            <li>Leaks and visible underbody issues</li>
+          </ul>
+        </div>
+
+        <div class="media glass-card reveal delay-1">
+          <img src="/images/nct-check.jpg" alt="Pre NCT vehicle inspection" />
+        </div>
+      </section>
+
+      <section class="service-row reverse">
+        <div class="text-box glass-card reveal">
+          <h2>Diagnostics & warning lights</h2>
+          <p>
+            If your car has warning lights or electrical issues, diagnostics can help identify the problem before the test.
+          </p>
+          <ul>
+            <li>Fault code scan</li>
+            <li>Engine warning light check</li>
+            <li>ABS / airbag related warnings</li>
+            <li>Electrical fault finding</li>
+            <li>Advice on the next repair step</li>
+          </ul>
+        </div>
+
+        <div class="media glass-card reveal delay-1">
+          <img src="/images/diagnostics.jpg" alt="Vehicle diagnostics" />
+        </div>
+      </section>
+
+      <section class="service-row">
+        <div class="text-box glass-card reveal">
+          <h2>Service condition</h2>
+          <p>
+            We can also check basic service items and help prepare the vehicle so it is cleaner, safer and more ready for inspection.
+          </p>
+          <ul>
+            <li>Oil and filter condition</li>
+            <li>Fluid level checks</li>
+            <li>Battery and charging check</li>
+            <li>Wipers, washers and visibility items</li>
+            <li>General advice before the test</li>
+          </ul>
+        </div>
+
+        <div class="media glass-card reveal delay-1">
+          <img src="/images/oil-service.jpg" alt="Oil and filter service" />
+        </div>
+      </section>
+
+      <section class="cta reveal">
+        <h2>Need NCT preparation?</h2>
+        <p>
+          Contact AURA Motors and send your car details. We will explain what can be checked, what may need attention,
+          and what the next step should be.
+        </p>
+
+        <div class="hero-buttons" style="justify-content:center;">
+          <a class="btn primary" href="tel:+353857363599">Call: +353 85 736 3599</a>
+          <a class="btn" target="_blank" href="https://wa.me/353857363599">WhatsApp</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      © 2026 AURA Motors • Crandonnell, Co. Wexford, Y35 F5DV • Call or WhatsApp: +353 85 736 3599
+    </footer>
+
+  </div>
 </body>
 </html>
